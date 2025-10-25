@@ -10,12 +10,11 @@ app.use(express.json());
 // Usar rutas de cuentas (mount en /cuentas para coincidir con las rutas de prueba)
 app.use('/cuentas', cuentasRoutes);
 
-// 404 handler (must be after routes)
+// 404 
 app.use((req, res) => {
   res.status(404).json({ error: 'Not Found' });
 });
 
-// Basic error handler
 app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ error: 'Internal Server Error' });
