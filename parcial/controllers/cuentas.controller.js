@@ -48,7 +48,7 @@ function buscarPorQuery(req, res) {
   return res.json({ finded: true, data: resultados });
 }
 
-// Obtener balances (ruta extra)
+// Obtener balances 
 function obtenerBalances(req, res) {
   const data = cuentas.map(c => ({ client: c.client, balance: c.balance }));
   res.json({ count: data.length, data });
